@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "noEmit": false,
+    "noEmitOnError": false,
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "declaration": true,
+    "outDir": "lib",
+    "rootDir": "src/app/ourpalm-form",
+    "lib": [
+      "es6",
+      "dom"
+    ]
+  },
+  "include": [
+    "src/app/ourpalm-form/**/*"
+  ],
+  "angularCompilerOptions": {
+    "genDir": "aot",
+    "skipMetadataEmit": true
+  }
+}

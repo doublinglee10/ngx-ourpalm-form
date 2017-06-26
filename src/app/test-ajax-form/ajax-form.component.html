@@ -1,0 +1,18 @@
+<div style="padding:20px;margin:10px;border:1px solid red;">
+    <h1>ajax form</h1>
+    <form ourpalm-form action="comment.php" method="post" enctype="multipart/form-data">
+        Name: <input type="text" name="name"/>
+        Comment: <textarea name="comment"></textarea>
+        <input type="file" name="file">
+        <input type="submit" value="Submit Comment"/>
+    </form>
+
+    <button (click)="formSerialize()">formSerialize</button>
+    <button (click)="fieldSerialize()">fieldSerialize</button>
+    <button (click)="fieldValue()">fieldValue</button>
+    <button (click)="resetForm()">resetForm</button>
+    <button (click)="clearForm()">clearForm</button>
+    <button (click)="clearFields()">clearFields</button>
+    <button (click)="submitMethod()">submit</button>
+
+</div>
