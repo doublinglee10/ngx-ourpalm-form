@@ -1,6 +1,7 @@
 <div style="padding:20px;margin:10px;border:1px solid red;">
     <h1>ajax form</h1>
-    <form ourpalm-form action="comment.php" method="post" enctype="multipart/form-data">
+    <form ourpalm-form method="post" enctype="multipart/form-data">
+        <input type="hidden" name="hidden" value="0">
         Name: <input type="text" name="name"/>
         Comment: <textarea name="comment"></textarea>
         <input type="file" name="file">

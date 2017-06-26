@@ -10,7 +10,7 @@ export class OurpalmFormComponent implements AfterViewInit {
 
     @Input('ourpalm-form') options: any = {};
 
-    protected $el: $;
+    protected $el: any;
 
     constructor(protected el: ElementRef, protected config: OurpalmFormConfig) {
     }
@@ -46,5 +46,9 @@ export class OurpalmFormComponent implements AfterViewInit {
 
     ajaxSubmit(options: any = {}) {
         this.$el.ajaxSubmit(Object.assign({}, this.config.options, this.options, options));
+    }
+
+    ajaxForm(options: any = {}) {
+        this.$el.ajaxForm(Object.assign({}, this.config.options, this.options, options));
     }
 }

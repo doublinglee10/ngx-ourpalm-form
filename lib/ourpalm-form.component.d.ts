@@ -1,12 +1,11 @@
 import { AfterViewInit, ElementRef } from "@angular/core";
-import * as $ from "jquery";
 import "jquery-form";
 import { OurpalmFormConfig } from "./ourpalm-form-config.service";
 export declare class OurpalmFormComponent implements AfterViewInit {
     protected el: ElementRef;
     protected config: OurpalmFormConfig;
     options: any;
-    protected $el: $;
+    protected $el: any;
     constructor(el: ElementRef, config: OurpalmFormConfig);
     ngAfterViewInit(): void;
     formSerialize(): any;
@@ -16,4 +15,5 @@ export declare class OurpalmFormComponent implements AfterViewInit {
     clearForm(): void;
     clearFields(selector: any): void;
     ajaxSubmit(options?: any): void;
+    ajaxForm(options?: any): void;
 }

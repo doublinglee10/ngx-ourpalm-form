@@ -40,6 +40,20 @@ export class TestAjaxFormComponent implements AfterViewInit {
     }
 
     submitMethod() {
-        this.ajaxForm.ajaxSubmit();
+        this.ajaxForm.ajaxSubmit({
+            url: 'bbs/section/addSection.htm',
+            xhrFields: {
+                withCredentials: true //跨域发送cookie, 异步提交表单时使用XHR2.0
+            },
+            headers: {
+                name: 'aaaaa'
+            },
+            success: function () {
+                console.info('success', arguments);
+            },
+            error: function () {
+                console.info('error', arguments);
+            }
+        });
     }
 }
