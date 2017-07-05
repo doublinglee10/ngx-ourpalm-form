@@ -1,28 +1,112 @@
 # NgxOurpalmForm
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.0.
+Angular 2 Port for the Jquery Form [http://malsup.com/jquery/form/](http://malsup.com/jquery/form/)
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+npm install ngx-ourpalm-form --save
+```
 
-## Code scaffolding
+## Example
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+import the `OurpalmFormModule` module in your application module
 
-## Build
+```javascript
+import { OurpalmFormModule } from "ngx-ourpalm-form";
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+@NgModule({
+    imports: [OurpalmFormModule]
+})
+```
 
-## Running unit tests
+```
+// app.component.ts
+import { Component } from '@angular/core';
+import { OurpalmFormComponent } from "ngx-ourpalm-form";
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html'
+})
+export class AppComponent {
 
-## Running end-to-end tests
+  @ViewChild(OurpalmFormComponent) form: OurpalmFormComponent;
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+  submitForm() {
+    this.form.ajaxSubmit({
+      url: 'http://hostname:port/path/xxx',
+      success: (result) => {
+          console.info(result);
+      },
+      error: (result) => {
+        console.info(result);
+      }
+    });
+  }
+}
 
-## Further help
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+// app.component.html
+<form ourpalm-form>
+    <input type="text" name="username"/>
+    <input type="text" name="password"/>
+    <input type="file" name="file"/>
+    <button (click)="submitForm()">submit</button>
+</form>
+```
+
+or
+
+```
+<form ourpalm-form #form action="http://hostname:port/path/xxx" method="post" enctype="multipart/form-data">
+    <input type="text" name="username"/>
+    <input type="text" name="password"/>
+    <input type="file" name="file"/>
+    <button (click)="form.submitForm()">submit</button>
+</form>
+```
+
+You can pass global settings that can be overloaded by the `options` object in the `OurpalmFormComponent` instances. Use the `OurpalmFormConfig` service to do so. The service provider is set in the `OurpalmFormModule` module.
+
+```
+import { OurpalmFormConfig } from 'ngx-ourpalm-form';
+
+@Component({
+    selector:'my-app',
+    template:'<h3>Component Template</h3>'
+})
+export class AppComponent {
+
+    constructor(private config: OurpalmFormConfig) {
+        this.config.options = {
+            xhrFields: {
+                withCredentials: true
+            }
+        };
+    }
+}
+```
+
+
+## Method
+
+|	method				  |	 param 		      | 	            	desc 					|
+|-------------------------|-------------------|-------------------------------------------------|
+|	formSerialize         |                   |      Serializes the form into a query string. This method will return a string in the format: name1=value1&name2=value2  |
+|	fieldSerialize        |    cssSelector    |		 Serializes field elements into a query string				   |
+|	fieldValue            |    cssSelector    |		 Returns the value(s) of the element(s) in the matched set in an array				   |
+|	resetForm             |                   |		 Resets the form to its original state by invoking the form element's native DOM method.				   |
+|	clearForm             |                   |		 Clears the form elements.  |
+|	clearFields           |    cssSelector    |		 Clears field elements.   |
+|	ajaxSubmit            |    options        |		 Immediately submits the form via AJAX.  |
+|	ajaxForm              |    options        |		 Prepares a form to be submitted via AJAX by adding all of the necessary event listeners. It does not submit the form.   |
+
+
+[demo](./src/app/text-ajax-form)
+
+
+Below is the link to the original project, there's more info regarding the jquery form there. [http://malsup.com/jquery/form/](http://malsup.com/jquery/form/)
+
