@@ -20,7 +20,7 @@ import { OurpalmFormModule } from "ngx-ourpalm-form";
 })
 ```
 
-```
+```javascript
 // app.component.ts
 import { Component } from '@angular/core';
 import { OurpalmFormComponent } from "ngx-ourpalm-form";
@@ -48,7 +48,7 @@ export class AppComponent {
 
 ```
 
-```
+```xml
 // app.component.html
 <form ourpalm-form>
     <input type="text" name="username"/>
@@ -60,7 +60,7 @@ export class AppComponent {
 
 or
 
-```
+```xml
 <form ourpalm-form #form action="http://hostname:port/path/xxx" method="post" enctype="multipart/form-data">
     <input type="text" name="username"/>
     <input type="text" name="password"/>
@@ -71,7 +71,7 @@ or
 
 You can pass global settings that can be overloaded by the `options` object in the `OurpalmFormComponent` instances. Use the `OurpalmFormConfig` service to do so. The service provider is set in the `OurpalmFormModule` module.
 
-```
+```javascript
 import { OurpalmFormConfig } from 'ngx-ourpalm-form';
 
 @Component({
@@ -105,7 +105,7 @@ export class AppComponent {
 |	ajaxForm              |    options        |		 Prepares a form to be submitted via AJAX by adding all of the necessary event listeners. It does not submit the form.   |
 
 
-[demo](./src/app/text-ajax-form)
+[demo](./src/app/test-ajax-form/ajax-form.component.ts)
 
 
 Below is the link to the original project, there's more info regarding the jquery form there. [http://malsup.com/jquery/form/](http://malsup.com/jquery/form/)
