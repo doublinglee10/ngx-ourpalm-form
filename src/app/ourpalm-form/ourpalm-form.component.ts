@@ -1,6 +1,4 @@
 import {AfterViewInit, Directive, ElementRef, Input} from "@angular/core";
-import * as $ from "jquery";
-import "jquery-form";
 import {OurpalmFormConfig} from "./ourpalm-form-config.service";
 
 @Directive({

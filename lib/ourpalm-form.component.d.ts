@@ -1,5 +1,4 @@
 import { AfterViewInit, ElementRef } from "@angular/core";
-import "jquery-form";
 import { OurpalmFormConfig } from "./ourpalm-form-config.service";
 export declare class OurpalmFormComponent implements AfterViewInit {
     protected el: ElementRef;
