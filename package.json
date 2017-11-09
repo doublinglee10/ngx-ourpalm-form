@@ -1,6 +1,6 @@
 {
   "name": "ngx-ourpalm-form",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "license": "MIT",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
@@ -21,16 +21,18 @@
     "url": "git+https://github.com/lishichao1002/ngx-ourpalm-form.git"
   },
   "keywords": [
-    "angular2",
+    "angular",
     "angular4",
-    "ng2",
     "form",
     "jquery"
   ],
   "bugs": {
     "url": "https://github.com/lishichao1002/ngx-ourpalm-form/issues"
   },
-  "dependencies": {
+  "peerDependencies": {
+    "@angular/core": "^4.0.0"
+  },
+  "devDependencies": {
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
@@ -44,9 +46,7 @@
     "jquery": "^3.2.1",
     "jquery-form": "^4.2.1",
     "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4"
-  },
-  "devDependencies": {
+    "zone.js": "^0.8.4",
     "@angular/cli": "1.1.0",
     "@angular/compiler-cli": "^4.0.0",
     "@angular/language-service": "^4.0.0",
