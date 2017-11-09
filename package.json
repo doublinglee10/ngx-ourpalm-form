@@ -1,6 +1,6 @@
 {
   "name": "ngx-ourpalm-form",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "license": "MIT",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
@@ -32,6 +32,10 @@
   "peerDependencies": {
     "@angular/core": "^4.0.0"
   },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jquery-form": "^4.2.1"
+  },
   "devDependencies": {
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
@@ -43,8 +47,6 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
-    "jquery": "^3.2.1",
-    "jquery-form": "^4.2.1",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4",
     "@angular/cli": "1.1.0",
