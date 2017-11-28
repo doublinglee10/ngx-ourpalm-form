@@ -6,7 +6,8 @@ import {OurpalmFormComponent} from "../ourpalm-form";
     templateUrl: './ajax-form.component.html'
 })
 export class TestAjaxFormComponent implements AfterViewInit {
-    @ViewChild(OurpalmFormComponent)
+
+    @ViewChild('myform')
     ajaxForm: OurpalmFormComponent;
 
     ngAfterViewInit(): void {

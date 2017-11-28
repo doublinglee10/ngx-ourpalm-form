@@ -2,7 +2,8 @@ import {AfterViewInit, Directive, ElementRef, Input} from "@angular/core";
 import {OurpalmFormConfig} from "./ourpalm-form-config.service";
 
 @Directive({
-    selector: '[ourpalm-form]'
+    selector: '[ourpalm-form]',
+    exportAs: 'ourpalmForm'
 })
 export class OurpalmFormComponent implements AfterViewInit {
 

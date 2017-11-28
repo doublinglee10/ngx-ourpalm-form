@@ -1,6 +1,6 @@
 {
   "name": "ngx-ourpalm-form",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "license": "MIT",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
@@ -29,18 +29,15 @@
   "bugs": {
     "url": "https://github.com/lishichao1002/ngx-ourpalm-form/issues"
   },
-  "peerDependencies": {
-    "@angular/core": "^4.0.0"
-  },
   "dependencies": {
     "jquery": "^3.2.1",
     "jquery-form": "^4.2.1"
   },
   "devDependencies": {
+    "@angular/core": "^4.0.0",
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
-    "@angular/core": "^4.0.0",
     "@angular/forms": "^4.0.0",
     "@angular/http": "^4.0.0",
     "@angular/platform-browser": "^4.0.0",
